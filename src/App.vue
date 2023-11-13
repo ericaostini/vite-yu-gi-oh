@@ -1,7 +1,7 @@
 <template>
   <HeaderComponent />
   <MainComponent />
-  <LoadingComponent />
+  <LoadingComponent v-show="store.listCards.length === 0" />
 </template>
 
 <script>
