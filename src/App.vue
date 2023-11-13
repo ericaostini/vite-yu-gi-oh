@@ -5,6 +5,7 @@
 
 <script>
 import axios from 'axios';
+import { store } from './data/store.js'
 import HeaderComponent from './components/HeaderComponent.vue';
 import MainComponent from './components/MainComponent.vue';
 export default {
@@ -20,8 +21,16 @@ export default {
   },
   methods: {
     getCards() {
+      const url = store.apiUrl;
+      axios.get(url).then((response) => {
+        console.log(response.data);
+        store.listCards = response.data;
+      })
     }
   },
+  created() {
+    this.getCards();
+  }
 }
 </script>
 
