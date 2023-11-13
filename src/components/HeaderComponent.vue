@@ -16,10 +16,7 @@ export default {
 @use '.././assets/styles/partials/variables' as *;
 
 header {
-    height: 100px;
-
     h1 {
-        padding: 15px;
         background-color: $lightColor;
     }
 }
