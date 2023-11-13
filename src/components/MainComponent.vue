@@ -1,7 +1,7 @@
 <template>
     <main>
         <div class="container bg-light p-4">
-            <div class="bg-black text-light">ciao</div>
+            <div class="bg-black text-light fw-bolder p-3">Fonud {{ store.listCards.length }} cards</div>
             <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-4">
                 <div class="col" v-for="(card, index) in store.listCards" :key="index">
                     <CardComponent :name="card.name" :type="card.archetype" :image="card.card_images[0].image_url" />
