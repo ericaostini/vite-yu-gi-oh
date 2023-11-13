@@ -1,12 +1,13 @@
 <template>
-  <div class="border">
-    Project
-  </div>
+  <HeaderComponent />
 </template>
 
 <script>
+import HeaderComponent from './components/HeaderComponent.vue';
+
 export default {
-  name: 'App',
+  name: "App",
+  components: { HeaderComponent }
 }
 </script>
 
