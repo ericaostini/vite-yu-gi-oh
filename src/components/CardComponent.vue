@@ -11,7 +11,6 @@
 <script>
 export default {
     name: 'CardComponent',
-    props: ['name', 'type']
 }
 </script>
 
