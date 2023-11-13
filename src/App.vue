@@ -1,0 +1,13 @@
+<template>
+  <div class="border">
+    Project
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'App',
+}
+</script>
+
+<style lang="scss" scoped></style>
