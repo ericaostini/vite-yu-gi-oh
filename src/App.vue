@@ -23,8 +23,9 @@ export default {
     getCards() {
       const url = store.apiUrl;
       axios.get(url).then((response) => {
-        console.log(response.data);
-        store.listCards = response.data;
+        console.log(response.data.data);
+        store.listCards = response.data.data;
+        console.log(store.listCards)
       })
     }
   },

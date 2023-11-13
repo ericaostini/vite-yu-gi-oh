@@ -1,6 +1,8 @@
 <template>
-    <div class="container" v-for="(card, index) in listCard" .:key="index">
-        <CardComponent :image="card.card_image.image_url" :name="card.name" :type='card.archetype' />
+    <div class="row container">
+        <div class="col-4" v-for="(card, index) in store.listCards" :key="index">
+            <CardComponent :name="card.name" :type="card.archetype" :image="card.card_images[0].image_url" />
+        </div>
     </div>
 </template>
 
@@ -13,7 +15,6 @@ export default {
     data() {
         return {
             store,
-            listCard: store.listCards
         }
     },
 }
