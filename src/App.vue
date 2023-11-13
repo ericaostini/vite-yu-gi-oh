@@ -1,6 +1,7 @@
 <template>
   <HeaderComponent />
   <MainComponent />
+  <LoadingComponent />
 </template>
 
 <script>
@@ -8,11 +9,13 @@ import axios from 'axios';
 import { store } from './data/store.js'
 import HeaderComponent from './components/HeaderComponent.vue';
 import MainComponent from './components/MainComponent.vue';
+import LoadingComponent from './components/LoadingComponent.vue';
 export default {
   name: "App",
   components: {
     HeaderComponent,
-    MainComponent
+    MainComponent,
+    LoadingComponent
   },
   data() {
     return {
