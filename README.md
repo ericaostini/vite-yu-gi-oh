@@ -55,6 +55,9 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 ```sh
         npm install bootstrap axios 
 ``` 
+```sh
+        npm install axios
+```
 
 - importo bootstrap dentro main.scss @import 'bootstrap/scss/bootstrap';
 
