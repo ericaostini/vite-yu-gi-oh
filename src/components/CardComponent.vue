@@ -1,7 +1,7 @@
 <template>
-    <div class="cards">
-        <img :src="image" :alt="name">
-        <div>
+    <div class="card h-100">
+        <img class="card-img-top" :src="image" :alt="name">
+        <div class="card-body">
             <h4 class="text-uppercase">{{ name }}</h4>
             <h6>{{ type }}</h6>
         </div>
@@ -21,10 +21,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.cards {
-    img {
-        height: 200px;
-    }
-}
-</style>
+<style lang="scss" scoped></style>
