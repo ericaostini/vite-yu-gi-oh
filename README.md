@@ -57,3 +57,10 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 ``` 
 
 - importo bootstrap dentro main.scss @import 'bootstrap/scss/bootstrap';
+
+## Creazione componenti header e main
+- creo file HeaderComponent.vue e lo importo nell'App.vue (stessa cosa per il file MainComponent.vue)
+
+## Creazione file store.js per stato componenti 
+- all'interno della cartella src creo una cartella data, con all'interno il file store.js
+- file store.js importa {reactive} da vue
