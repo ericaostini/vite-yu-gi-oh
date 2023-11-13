@@ -1,5 +1,5 @@
 <template>
-    <div class="card h-100">
+    <div class="card h-100 bg-mycard">
         <img class="card-img-top" :src="image" :alt="name">
         <div class="card-body">
             <h4 class="text-uppercase">{{ name }}</h4>
@@ -21,4 +21,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use '.././assets/styles/partials/variables' as *;
+
+.bg-mycard {
+    background-color: $colorBg;
+}
+</style>
