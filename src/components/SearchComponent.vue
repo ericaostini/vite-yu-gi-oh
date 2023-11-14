@@ -4,11 +4,12 @@
             <div class="col-lg-2 col-md-4 col-sm-1">
                 <select class="form-select" aria-label="Default select example" v-model="typeCards" @change="getArchetype">
                     <option value="All"></option>
-                    <option value="Alien">Alien</option>
+                    <option v-for="(i, index) in store.listArch" :value="i.archetype_name">{{ i.archetype_name }}</option>
+                    <!-- <option value="Alien">Alien</option>
                     <option value="Chaos">Chaos</option>
                     <option value="Dark Magician">Dark Magiciant</option>
                     <option value="HERO">HERO</option>
-                    <option value="Thunder Dragon">Thunder Dragon</option>
+                    <option value="Thunder Dragon">Thunder Dragon</option> -->
                 </select>
             </div>
         </div>
@@ -16,12 +17,13 @@
 </template>
 
 <script>
-import { getConstantType } from '@vue/compiler-core';
+import { store } from '../data/store.js';
 
 export default {
     name: 'SearchComponent',
     data() {
         return {
+            store,
             typeCards: ""
         }
     },
