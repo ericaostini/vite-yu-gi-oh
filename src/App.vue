@@ -29,7 +29,7 @@ export default {
         num: 20,
         offset: 0,
         archetype: null
-      }
+      },
     }
   },
   methods: {
@@ -53,12 +53,26 @@ export default {
       ).then((response) => {
         console.log(response.data.data);
         store.listCards = response.data.data;
-        console.log(store.listCards.length)
+        console.log(store.listCards.length);
       })
     }
   },
   created() {
     this.getCards();
+    function getFig() {
+      return axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0")
+    };
+    function getArchetypeCard() {
+      return axios.get("https://db.ygoprodeck.com/api/v7/archetypes.php")
+    };
+    Promise.all([getFig(), getArchetypeCard()]).then(function (results) {
+      const getCards = results[0];
+      const getArch = results[1];
+      console.log(results[1]);
+      store.listArch = getArch.data;
+      console.log(store.listArch);
+    });
+
   }
 }
 </script>
