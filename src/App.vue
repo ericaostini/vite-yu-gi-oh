@@ -49,12 +49,8 @@ export default {
     },
     getCards() {
       const url = store.apiUrl;
-      axios.get(url, {
-        params: {
-          num: 20,
-          offset: 0
-        }
-      }).then((response) => {
+      axios.get(url, { params: this.params }
+      ).then((response) => {
         console.log(response.data.data);
         store.listCards = response.data.data;
         console.log(store.listCards.length)
