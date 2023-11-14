@@ -1,7 +1,7 @@
 <template>
   <HeaderComponent />
   <main>
-    <SearchComponent />
+    <SearchComponent @get-type="type" />
     <MainComponent />
     <LoadingComponent />
   </main>
@@ -35,6 +35,9 @@ export default {
         store.listCards = response.data.data;
         console.log(store.listCards.length)
       })
+    },
+    type(search) {
+      console.log(search)
     }
   },
   created() {
