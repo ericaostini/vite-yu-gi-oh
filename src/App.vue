@@ -27,8 +27,7 @@ export default {
       store,
       params: {
         num: 20,
-        offset: 0,
-        archetype: null
+        offset: 0
       },
     }
   },
@@ -41,11 +40,14 @@ export default {
           offset: 0,
           archetype: search
         }
+        if (search === "All") {
+          this.params.archetype = null
+        }
         console.log(this.params)
       } else {
         this.params = this.params
       }
-      this.getCards()
+      this.getCards();
     },
     getCards() {
       const url = store.apiUrl;
@@ -57,10 +59,10 @@ export default {
       })
     }
   },
-  created() {
+  mounted() {
     this.getCards();
     function getFig() {
-      return axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0")
+      return axios.get("https://db.ygoprodeck.com/api/v7/cardinfo.php")
     };
     function getArchetypeCard() {
       return axios.get("https://db.ygoprodeck.com/api/v7/archetypes.php")
