@@ -3,7 +3,7 @@
   <main>
     <SearchComponent @get-type="typeCard" />
     <MainComponent />
-    <LoadingComponent />
+    <!-- <LoadingComponent v-if="store.loading" /> -->
   </main>
 </template>
 
@@ -13,14 +13,14 @@ import { store } from './data/store.js'
 import HeaderComponent from './components/HeaderComponent.vue';
 import SearchComponent from './components/SearchComponent.vue'
 import MainComponent from './components/MainComponent.vue';
-import LoadingComponent from './components/LoadingComponent.vue';
+// import LoadingComponent from './components/LoadingComponent.vue';
 export default {
   name: "App",
   components: {
     HeaderComponent,
     SearchComponent,
     MainComponent,
-    LoadingComponent
+    // LoadingComponent
   },
   data() {
     return {
@@ -57,7 +57,7 @@ export default {
         store.listCards = response.data.data;
         console.log(store.listCards.length);
       })
-    }
+    },
   },
   mounted() {
     this.getCards();
@@ -83,6 +83,7 @@ export default {
 @use './assets/styles/partials/variables' as *;
 
 main {
+  padding-bottom: 20px;
   background-color: $colorBg;
 }
 </style>

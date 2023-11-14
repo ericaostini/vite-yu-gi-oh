@@ -1,37 +1,27 @@
-<template>
-    <div v-if="loading" class="loading-page">
-        <p>Loading...</p>
+<!-- <template>
+    <div>
+        <i class="fa-solid fa-spinner fa-spin"></i>
     </div>
 </template>
-  
+
 <script>
 export default {
-    name: 'LoadingComponent',
-    data: () => ({
-        loading: false
-    }),
-    methods: {
-        start() {
-            this.loading = true
-        },
-        finish() {
-            this.loading = false
-        }
-    }
+    name: 'LoaderComponent',
 }
 </script>
-  
-<style scoped>
-.loading-page {
-    position: fixed;
+
+<style lang="scss" scoped>
+div {
+    position: absolute;
     top: 0;
+    bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding-top: 200px;
-    font-size: 30px;
-    font-family: sans-serif;
+    right: 0;
+    z-index: 3000;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30vw;
 }
-</style>
+</style> -->
