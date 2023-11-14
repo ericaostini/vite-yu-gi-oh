@@ -1,7 +1,7 @@
 <template>
   <HeaderComponent />
   <main>
-    <SearchComponent @get-type="type" />
+    <SearchComponent @get-type="typeCard" />
     <MainComponent />
     <LoadingComponent />
   </main>
@@ -24,20 +24,41 @@ export default {
   },
   data() {
     return {
-      store
+      store,
+      params: {
+        num: 20,
+        offset: 0,
+        archetype: null
+      }
     }
   },
   methods: {
+    typeCard(search) {
+      console.log(search)
+      if (search) {
+        this.params = {
+          num: 20,
+          offset: 0,
+          archetype: search
+        }
+        console.log(this.params)
+      } else {
+        this.params = this.params
+      }
+      this.getCards()
+    },
     getCards() {
       const url = store.apiUrl;
-      axios.get(url).then((response) => {
+      axios.get(url, {
+        params: {
+          num: 20,
+          offset: 0
+        }
+      }).then((response) => {
         console.log(response.data.data);
         store.listCards = response.data.data;
         console.log(store.listCards.length)
       })
-    },
-    type(search) {
-      console.log(search)
     }
   },
   created() {
