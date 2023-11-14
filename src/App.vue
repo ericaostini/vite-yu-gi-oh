@@ -1,19 +1,24 @@
 <template>
   <HeaderComponent />
-  <MainComponent />
-  <LoadingComponent v-show="store.listCards.length === 0" />
+  <main>
+    <SearchComponent />
+    <MainComponent />
+    <LoadingComponent />
+  </main>
 </template>
 
 <script>
 import axios from 'axios';
 import { store } from './data/store.js'
 import HeaderComponent from './components/HeaderComponent.vue';
+import SearchComponent from './components/SearchComponent.vue'
 import MainComponent from './components/MainComponent.vue';
 import LoadingComponent from './components/LoadingComponent.vue';
 export default {
   name: "App",
   components: {
     HeaderComponent,
+    SearchComponent,
     MainComponent,
     LoadingComponent
   },
@@ -38,4 +43,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use './assets/styles/partials/variables' as *;
+
+main {
+  background-color: $colorBg;
+}
+</style>

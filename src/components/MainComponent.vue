@@ -1,18 +1,5 @@
 <template>
     <main>
-        <div class="container p-4">
-            <div class="row">
-                <div class="col-lg-2 col-md-4 col-sm-1">
-                    <select class="form-select" aria-label="Default select example">
-                        <option value="1">Alien</option>
-                        <option value="2">Infernoble Arms</option>
-                        <option value="3">Noble Knight</option>
-                        <option value="4">Melodious</option>
-                        <option value="5">Archfiend</option>
-                    </select>
-                </div>
-            </div>
-        </div>
         <div class="container bg-light p-4">
             <div class="bg-black text-light fw-bolder p-3">Fonud {{ store.listCards.length }} cards</div>
             <div class="row row-cols-2 row-cols-md-4 row-cols-lg-5 g-4">
@@ -42,8 +29,6 @@ export default {
 @use '.././assets/styles/partials/variables' as *;
 
 main {
-    background-color: $colorBg;
-
     .counter {
         height: 100px;
         background-color: $primaryColor;
