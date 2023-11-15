@@ -70,6 +70,7 @@ export default {
     Promise.all([getFig(), getArchetypeCard()]).then(function (results) {
       const getCards = results[0];
       const getArch = results[1];
+      // store.getArch = result[1].data;
       console.log(results[1]);
       store.listArch = getArch.data;
       console.log(store.listArch);
